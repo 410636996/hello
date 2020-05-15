@@ -2,6 +2,7 @@ package com.example.hello;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
         //TestDev();
         txv.setText("嗨");
     }
+    public boolean onTouchEvent (MotionEvent event){
+        TextView txv = (TextView) findViewById(R.id.txv);
+        txv.setText("另一位使用者修改螢幕觸控");
+        return true;
+    }
+
     public void TestMaster(){
         TextView txv = (TextView) findViewById(R.id.txv);
         txv.setText("Master分支");
